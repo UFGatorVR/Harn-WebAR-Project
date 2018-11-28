@@ -1,86 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-</head>
+</html>
 
+<html>
 
-<!--All the image srcs are stored in a glitch.com assets folder. Will be switching them to local soon.-->
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script>
+    THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+</script>
 
-<body style="margin: 0px; overflow: hidden;">
+<script src="./components/event.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
     <a-scene embedded arjs>
-
-        <a-entity camera></a-entity>
-
-        <a-marker preset="hiro">
-
-            <!--         <a-entity geometry="primitive: box" material="color: red" position="0 5 5"> 
-        </a-entity>
-        <a-entity geometry="primitive: box" material="color: blue">
-        </a-entity> -->
-            <a-image src="https://cdn.glitch.com/e277030f-9969-4788-9010-66de4c3ba13f%2FMassimoVitali1.png?1541561164290"
-                position="1.3 0 0" rotation="-90 0 0" scale="0 0 0">
-
-                <a-entity geometry="primitive: sphere" material="color: red" position="0 0 1" scale="0.2 0.2 0.2">
-
-                    <a-animation attribute="material.color" from="red" to="blue" begin="26000" dur="1000"></a-animation>
-
-                </a-entity>
-                <a-entity text="value: Massimo Vitali;" position="0 0.7 0"></a-entity>
-
-                <a-animation attribute="scale" to="1 1 1" repeat="1"></a-animation>
-                <a-animation attribute="rotation" to="270 0 0" repeat="1"></a-animation>
-                <a-animation attribute="position" to="1.3 1 0" begin="2000" end="4000"></a-animation>
-                <a-animation attribute="position" to="1.3 0 0" begin="4000" end="6000"></a-animation>
-
-            </a-image>
-
-            <a-image src="https://cdn.glitch.com/e277030f-9969-4788-9010-66de4c3ba13f%2FYayoiKusama.png?1541564751948"
-                position="0 0 0" rotation="-90 0 0" scale="0 0 0">
-
-                <a-entity geometry="primitive: sphere" material="color: blue" position="0 0 1" scale="0.2 0.2 0.2">
-
-                    <a-animation attribute="material.color" from="blue" to="purple" begin="26000" dur="1000"></a-animation>
-
-                </a-entity>
-                <a-entity text="value: Yayoi Kusama;" position="0 0.7 0"></a-entity>
-
-                <a-animation attribute="scale" to="1 1 1" repeat="1"></a-animation>
-                <a-animation attribute="rotation" to="270 0 0" repeat="1"></a-animation>
-                <a-animation attribute="position" to="0 1 0" begin="8000" end="10000"></a-animation>
-                <a-animation attribute="position" to="0 0 0" begin="13000" end="16000"></a-animation>
-
-            </a-image>
-
-
-            <a-image src="https://cdn.glitch.com/e277030f-9969-4788-9010-66de4c3ba13f%2FTonyRobbin1.png?1541561166540"
-                position="-1.3 0 0" rotation="-90 0 0" scale="0 0 0">
-
-                <a-entity geometry="primitive: sphere" material="color: purple" position="0 0 1" scale="0.2 0.2 0.2">
-
-                    <a-animation attribute="material.color" from="purple" to="red" begin="26000" dur="1000"></a-animation>
-
-                </a-entity>
-                <a-entity text="value: Tony Robbin;" position="0 0.7 0"></a-entity>
-
-                <a-animation attribute="scale" to="1 1 1" repeat="1"></a-animation>
-                <a-animation attribute="rotation" to="270 0 0" repeat="1"></a-animation>
-                <a-animation attribute="position" to="-1.3 1 0" begin="18000" end="21000"></a-animation>
-                <a-animation attribute="position" to="-1.3 0 0" begin="22000" end="25000"></a-animation>
-
-            </a-image>
-
+        <a-asset>
+            <img id="vitali-src" type="image/png" src="./assets/MassimoVitali1.png">
+            <img id="kusama-src" type="image/png" src="./assets/YayoiKusama.png">
+            <img id="robbin-src" type="image/png" src="./assets/TonyRobbin1.png">
+        </a-asset>
+        <a-marker markerhandler cursor="rayOrigin: mouse; fuse: false" emitevents="true" id='marker' preset='hiro'>
+            <a-entity id="parent" position="0 0 0">
+                <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                    emitevents="true">
+                    <a-entity text="value: Massimo Vitali;" position="0 0.7 0"></a-entity>
+                </a-image>
+                <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-90 0 0" scale="1 1 1" emitevents="true">
+                    <a-entity text="value: Yayoi Kusama;" position="0 0.7 0"></a-entity>
+                </a-image>
+                <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                    emitevents="true">
+                    <a-entity text="value: Tony Robbin;" position="0 0.7 0"></a-entity>
+                </a-image>
+            </a-entity>
         </a-marker>
-
+        <a-entity camera></a-entity>
     </a-scene>
-
 </body>
 
 </html>

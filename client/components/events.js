@@ -13,8 +13,7 @@ init: function() {
         lastIndex = (lastIndex +1) % COLORS.length;
         box.setAttribute('color', COLORS[lastIndex]);
         console.log('I was clicked at: ', evt.detail.intersection.point);
-
-
+    }
   });
 }
 });
