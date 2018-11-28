@@ -1,0 +1,11 @@
+// ngrok download page
+https://dashboard.ngrok.com/get-started
+
+// node and npm install page
+https://nodejs.org/en/download/
+
+// ar.js blog post for future reference
+https://aframe.io/blog/arjs/
+
+// ar.js master
+https://github.com/jeromeetienne/AR.js/tree/master/aframe
