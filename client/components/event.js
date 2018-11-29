@@ -8,26 +8,40 @@ AFRAME.registerComponent('markerhandler', {
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
     var SIZE = ['3', '2', '1'];
+    var timesClicked = 0;
+    
 
 
     vitali.addEventListener('click', function (ev) {
-      if (marker.object3D.visible == true && ev.detail.cursorEl) {
-        lastIndex = (lastIndex + 1) % COLORS.length;
+      timesClicked++;
 
-        vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-        vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-        vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+      if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked % 2 == 0) {
+        document.querySelector('#up').emit('click');
+      } else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked % 2 != 0) {
+          document.querySelector('#down').emit('click');
 
       }
+      console.log(timesClicked);
+
+      // if (marker.object3D.visible == true && ev.detail.cursorEl) {
+      //   lastIndex = (lastIndex + 1) % COLORS.length;
+
+        // vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+        // vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+        // vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+        
+
+      // }
 
     });
     kusama.addEventListener('click', function (ev) {
       if (marker.object3D.visible == true && ev.detail.cursorEl) {
         lastIndex = (lastIndex + 1) % COLORS.length;
 
-        kusama.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-        kusama.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-        kusama.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+        // kusama.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+        // kusama.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+        // kusama.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+        
       }
 
     });
@@ -35,9 +49,10 @@ AFRAME.registerComponent('markerhandler', {
       if (marker.object3D.visible == true && ev.detail.cursorEl) {
         lastIndex = (lastIndex + 1) % COLORS.length;
 
-        robbin.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-        robbin.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-        robbin.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+        // robbin.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+        // robbin.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+        // robbin.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+
       }
 
     });

@@ -25,14 +25,24 @@
             <a-entity id="parent" position="0 0 0">
                 <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
                     emitevents="true">
-                    <a-entity text="value: Massimo Vitali;" position="0 0.7 0"></a-entity>
+                    <a-animation id="up" attribute="position" to="1.3 1 0">
+                        <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                    </a-animation>
+                    <a-animation id="down" attribute="position" to="1.3 0 0">
+                        <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                    </a-animation>                   
+                    <a-entity text="value: Massimo Vitali;" position="0 1 0"></a-entity>
                 </a-image>
                 <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-90 0 0" scale="1 1 1" emitevents="true">
-                    <a-entity text="value: Yayoi Kusama;" position="0 0.7 0"></a-entity>
+                    <a-animation attribute="position" to="0 1 0"  begin="click"></a-animation>
+                    <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="click" ></a-animation>
+                    <a-entity text="value: Yayoi Kusama;" position="0 1 0"></a-entity>
                 </a-image>
                 <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
                     emitevents="true">
-                    <a-entity text="value: Tony Robbin;" position="0 0.7 0"></a-entity>
+                    <a-animation attribute="position" to="-1.3 1 0"  begin="click"></a-animation>
+                    <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="click" ></a-animation>
+                    <a-entity text="value: Tony Robbin;" position="0 1 0"></a-entity>
                 </a-image>
             </a-entity>
         </a-marker>
