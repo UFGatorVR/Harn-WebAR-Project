@@ -8,50 +8,50 @@ AFRAME.registerComponent('markerhandler', {
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
     var SIZE = ['3', '2', '1'];
-    var timesClicked = 0;
+    var timesClicked = [0,0,0];
     
 
 
     vitali.addEventListener('click', function (ev) {
-      timesClicked++;
+      timesClicked[0]++;   
 
-      if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked % 2 == 0) {
-        document.querySelector('#up').emit('click');
-      } else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked % 2 != 0) {
-          document.querySelector('#down').emit('click');
+      if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[0] % 2 != 0) {
+        vitali.emit('up');
+      } 
+      else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[0] % 2 == 0) {
+          vitali.emit('down');
 
       }
-      console.log(timesClicked);
 
       // if (marker.object3D.visible == true && ev.detail.cursorEl) {
       //   lastIndex = (lastIndex + 1) % COLORS.length;
 
-        // vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-        // vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-        // vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
-        
-
+      //   vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+      //   vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+      //   vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
       // }
 
     });
     kusama.addEventListener('click', function (ev) {
-      if (marker.object3D.visible == true && ev.detail.cursorEl) {
-        lastIndex = (lastIndex + 1) % COLORS.length;
+      timesClicked[1]++;   
 
-        // kusama.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-        // kusama.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-        // kusama.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
-        
+      if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[1] % 2 != 0) {
+        kusama.emit('up');
+      } 
+      else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[1] % 2 == 0) {
+          kusama.emit('down');
+
       }
 
     });
     robbin.addEventListener('click', function (ev) {
-      if (marker.object3D.visible == true && ev.detail.cursorEl) {
-        lastIndex = (lastIndex + 1) % COLORS.length;
+      timesClicked[2]++;   
 
-        // robbin.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-        // robbin.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-        // robbin.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+      if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[2] % 2 != 0) {
+        robbin.emit('up');
+      } 
+      else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[2] % 2 == 0) {
+          robbin.emit('down');
 
       }
 
