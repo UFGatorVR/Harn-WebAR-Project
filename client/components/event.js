@@ -14,6 +14,8 @@ AFRAME.registerComponent('markerhandler', {
       if (marker.object3D.visible == true && ev.detail.cursorEl) {
         lastIndex = (lastIndex + 1) % COLORS.length;
 
+        console.log("Debug: Vitali");
+
         vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
         vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
         vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
@@ -25,6 +27,8 @@ AFRAME.registerComponent('markerhandler', {
       if (marker.object3D.visible == true && ev.detail.cursorEl) {
         lastIndex = (lastIndex + 1) % COLORS.length;
 
+        console.log("Debug: Kusama");
+
         kusama.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
         kusama.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
         kusama.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
@@ -34,6 +38,8 @@ AFRAME.registerComponent('markerhandler', {
     robbin.addEventListener('click', function (ev) {
       if (marker.object3D.visible == true && ev.detail.cursorEl) {
         lastIndex = (lastIndex + 1) % COLORS.length;
+
+        console.log("Debug: Robbin");
 
         robbin.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
         robbin.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
