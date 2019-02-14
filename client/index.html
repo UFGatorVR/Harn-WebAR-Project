@@ -1,32 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- include A-Frame obviously -->
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<!-- include ar.js for A-Frame -->
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<script src="./components/vidhandler.js"></script>
-<script>
-    THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
-</script>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs="trackingMethod: best;">
-      <!-- Import your assets: video, audio, image -->
-      <a-assets> 
-        <video type="video/mp4" id="video-src" muted autoplay loop="true" src="./gator-vr-promo.mp4.mp4" webkit-playsinline playsinline controls></video>
-      </a-assets> 
-  
-      <!-- <a-marker id="marker" type="pattern" url="./pattern-marker.patt">
-          <a-video vidhandler id="video-screen" src="#video-src" rotation="-90 0 0" width="4" height="3" play="true"></a-video>
-      </a-marker> -->
 
-      <a-marker id="marker" preset="hiro">
-          <a-video vidhandler id="video-screen" src="#video-src" rotation="-90 0 0" width="4" height="3" play="true"></a-video>
-          <!-- <a-plane position='0 1 0' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true; opacity: 0.8; src:#video-src'></a-plane> -->
-      </a-marker>
-      <a-entity camera></a-entity>
-      <!-- <a-marker-camera preset="hiro"></a-marker-camera>   -->
-  </body>
-  
-  </html>
-  
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!--  Portal Includes  -->
+    <script src="./aframe-portal-door.js"></script>
+    <script src="./threex-portal-door.js"></script>
+    <script src="./event.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        }
+    </style>
+</head>
+
+<body style="margin: 0px; overflow: hidden; width:100vw;">
+
+
+    <div class="container">
+        <button id="left">
+            <i class="fas fa-user"></i>
+        </button>
+        <button id="center">
+            <i class="fas fa-play"></i>
+        </button>
+        <button id="right">
+            <i class="fas fa-archway"></i>
+        </button>
+    </div>
+
+    <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
+        <a-asset>
+            <img id="vitali-src" type="image/png"
+                src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FMassimoVitali1.png?1549127754541"
+                crossorigin="anonymous">
+            <img id="kusama-src" type="image/png"
+                src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FYayoiKusama.png?1549127753700"
+                crossorigin="anonymous">
+            <img id="robbin-src" type="image/png"
+                src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FTonyRobbin1.png?1549127756112"
+                crossorigin="anonymous">
+        </a-asset>
+        <!--         cursor="rayOrigin: mouse; fuse: false" -->
+        <a-marker markerhandler emitevents="true" id="marker" preset="hiro">
+            <a-entity id="parent" position="0 0 0">
+                <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                    emitevents="true">
+                    <a-animation attribute="position" to="1.3 1 0" begin="up">
+                        <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                    </a-animation>
+                    <a-animation attribute="position" to="1.3 0 0" begin="down">
+                        <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                    </a-animation>
+                    <a-entity text="value: Massimo Vitali;" position="0 1 0"></a-entity>
+                </a-image>
+                <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-85 0 0" scale="1 1 1"
+                    emitevents="true">
+                    <a-animation attribute="position" to="0 1 0" begin="up">
+                        <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                    </a-animation>
+                    <a-animation attribute="position" to="0 0 0" begin="down">
+                        <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                    </a-animation>
+                    <!-- <a-animation attribute="position" to="0 1 0"  begin="up"></a-animation> -->
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                    <a-entity text="value: Yayoi Kusama;" position="0 1 0"></a-entity>
+                </a-image>
+                <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                    emitevents="true">
+                    <a-animation attribute="position" to="-1.3 1 0" begin="up">
+                        <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                    </a-animation>
+                    <a-animation attribute="position" to="-1.3 0 0" begin="down">
+                        <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                    </a-animation>
+                    <!-- <a-animation attribute="position" to="-1.3 1 0"  begin="up"></a-animation> -->
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                    <a-entity text="value: Tony Robbin;" position="0 1 0"></a-entity>
+                </a-image>
+            </a-entity>
+        </a-marker>
+
+        <!-- Create a anchor to attach your augmented reality -->
+        <a-anchor hit-testing-enabled="true">
+            <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 0"
+                scale="0.7 1 0.7" rotation="0 0 0"></a-portal-door>
+        </a-anchor>
+
+        <!-- Define a static camera -->
+        <a-camera-static />
+        <!--         <a-entity camera></a-entity> -->
+    </a-scene>
+    <script src="./script.js"></script>
+</body>
+
+</html>
