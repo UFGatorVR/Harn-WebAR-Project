@@ -15,7 +15,7 @@
 
 <body style='margin : 0px; overflow: hidden;'>
 
-    <a-scene embedded arjs>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-asset>
             <img id="vitali-src" type="image/png" src="./assets/MassimoVitali1.png">
             <img id="kusama-src" type="image/png" src="./assets/YayoiKusama.png">
@@ -30,16 +30,16 @@
                     </a-animation>
                     <a-animation id="down" attribute="position" to="1.3 0 0" begin="down">
                         <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
-                    </a-animation>                   
+                    </a-animation>
                     <a-entity text="value: Massimo Vitali;" position="0 1 0"></a-entity>
                 </a-image>
                 <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-90 0 0" scale="1 1 1" emitevents="true">
-                        <a-animation id="up" attribute="position" to="0 1 0" begin="up">
-                                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
-                            </a-animation>
-                            <a-animation id="down" attribute="position" to="0 0 0" begin="down">
-                                <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
-                            </a-animation>
+                    <a-animation id="up" attribute="position" to="0 1 0" begin="up">
+                        <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                    </a-animation>
+                    <a-animation id="down" attribute="position" to="0 0 0" begin="down">
+                        <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                    </a-animation>
                     <!-- <a-animation attribute="position" to="0 1 0"  begin="up"></a-animation> -->
                     <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
                     <a-entity text="value: Yayoi Kusama;" position="0 1 0"></a-entity>
@@ -47,11 +47,11 @@
                 <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
                     emitevents="true">
                     <a-animation id="up" attribute="position" to="-1.3 1 0" begin="up">
-                            <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
-                        </a-animation>
-                        <a-animation id="down" attribute="position" to="-1.3 0 0" begin="down">
-                            <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
-                        </a-animation>
+                        <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                    </a-animation>
+                    <a-animation id="down" attribute="position" to="-1.3 0 0" begin="down">
+                        <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                    </a-animation>
                     <!-- <a-animation attribute="position" to="-1.3 1 0"  begin="up"></a-animation> -->
                     <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
                     <a-entity text="value: Tony Robbin;" position="0 1 0"></a-entity>

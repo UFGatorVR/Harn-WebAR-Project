@@ -10,8 +10,6 @@ AFRAME.registerComponent('markerhandler', {
     var SIZE = ['3', '2', '1'];
     var timesClicked = [0,0,0];
     
-
-
     vitali.addEventListener('click', function (ev) {
       timesClicked[0]++;   
 
@@ -22,14 +20,6 @@ AFRAME.registerComponent('markerhandler', {
           vitali.emit('down');
 
       }
-
-      // if (marker.object3D.visible == true && ev.detail.cursorEl) {
-      //   lastIndex = (lastIndex + 1) % COLORS.length;
-
-      //   vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
-      //   vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
-      //   vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
-      // }
 
     });
     kusama.addEventListener('click', function (ev) {
