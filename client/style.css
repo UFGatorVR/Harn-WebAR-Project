@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 /* CSS files add styling rules to your content */
->>>>>>> b406cc9bddb422a4c9a01e635b9e5942d694eb4c
 
 body {
     font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
@@ -21,6 +18,14 @@ body {
         background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
       
       }
+      .frame {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+      }
+
       button {
         background-color:transparent;
           -moz-border-radius:6px;
