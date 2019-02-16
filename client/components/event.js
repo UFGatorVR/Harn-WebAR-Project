@@ -15,11 +15,19 @@ AFRAME.registerComponent('markerhandler', {
     vitali.addEventListener('click', function (ev) {
       timesClicked[0]++;   
 
+<<<<<<< HEAD
       if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[0] % 2 != 0) {
         vitali.emit('up');
       } 
       else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[0] % 2 == 0) {
           vitali.emit('down');
+=======
+        console.log("Debug: Vitali");
+
+        vitali.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+        vitali.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+        vitali.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+>>>>>>> b406cc9bddb422a4c9a01e635b9e5942d694eb4c
 
       }
 
@@ -41,6 +49,14 @@ AFRAME.registerComponent('markerhandler', {
       else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[1] % 2 == 0) {
           kusama.emit('down');
 
+<<<<<<< HEAD
+=======
+        console.log("Debug: Kusama");
+
+        kusama.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+        kusama.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+        kusama.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+>>>>>>> b406cc9bddb422a4c9a01e635b9e5942d694eb4c
       }
 
     });
@@ -53,6 +69,14 @@ AFRAME.registerComponent('markerhandler', {
       else if (marker.object3D.visible == true && ev.detail.cursorEl && timesClicked[2] % 2 == 0) {
           robbin.emit('down');
 
+<<<<<<< HEAD
+=======
+        console.log("Debug: Robbin");
+
+        robbin.setAttribute('geometry', 'width: ' + SIZE[lastIndex]);
+        robbin.setAttribute('geometry', 'height: ' + SIZE[lastIndex]);
+        robbin.setAttribute('geometry', 'depth: ' + SIZE[lastIndex]);
+>>>>>>> b406cc9bddb422a4c9a01e635b9e5942d694eb4c
       }
 
     });
