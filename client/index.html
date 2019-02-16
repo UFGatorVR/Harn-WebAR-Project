@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- include A-Frame obviously -->
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<!-- include ar.js for A-Frame -->
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<script src="./components/vidhandler.js"></script>
-<script>
-    THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
-</script>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs="trackingMethod: best;">
-      <!-- Import your assets: video, audio, image -->
-      <a-assets> 
-        <video type="video/mp4" id="video-src" muted autoplay loop="true" src="./gator-vr-promo.mp4.mp4" webkit-playsinline playsinline controls></video>
-      </a-assets> 
-  
-      <!-- <a-marker id="marker" type="pattern" url="./pattern-marker.patt">
-          <a-video vidhandler id="video-screen" src="#video-src" rotation="-90 0 0" width="4" height="3" play="true"></a-video>
-      </a-marker> -->
 
-      <a-marker id="marker" preset="hiro">
-          <a-video vidhandler id="video-screen" src="#video-src" rotation="-90 0 0" width="4" height="3" play="true"></a-video>
-          <!-- <a-plane position='0 1 0' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true; opacity: 0.8; src:#video-src'></a-plane> -->
-      </a-marker>
-      <a-entity camera></a-entity>
-      <!-- <a-marker-camera preset="hiro"></a-marker-camera>   -->
-  </body>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!--  Portal Includes  -->
+    <script src="./aframe-portal-door.js"></script>
+    <script src="./threex-portal-door.js"></script>
+    <script src="./event.js"></script>
+
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <!-- Angular Includes -->
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.20/release/angular-ui-router.min.js"></script>
+
+    <!-- Angular Dependencies -->
+    <script src="js/app.js"></script>
+
+    <!-- Factories/Services -->
+
+    <!-- Controllers -->
+
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body style="margin: 0px; overflow: hidden; width:100vw;" ng-app="harnApp">
   
-  </html>
-  
+    <ui-view></ui-view>
+
+    <!-- <script src="./script.js"></script> -->
+</body>
+
+</html>
