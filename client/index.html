@@ -5,11 +5,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+    <script id="aframe-ar" src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+
     <!--  Portal Includes  -->
-    <script src="./aframe-portal-door.js"></script>
-    <script src="./threex-portal-door.js"></script>
+    <script src="./public/aframe-portal-door.js"></script>
+    <script src="./public/threex-portal-door.js"></script>
     <script src="./event.js"></script>
 
     <script>
@@ -41,8 +44,7 @@
 <body style="margin: 0px; overflow: hidden; width:100vw;" ng-app="harnApp">
   
     <ui-view></ui-view>
-
-    <!-- <script src="./script.js"></script> -->
+    
 </body>
 
 </html>
