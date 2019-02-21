@@ -19,6 +19,17 @@ body {
         background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
       
       }
+      .frame {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-65%, -50%);
+      }
+      #reference-src {
+        width: 130%;
+        height: auto;
+      }
+
       button {
         background-color:transparent;
           -moz-border-radius:6px;
