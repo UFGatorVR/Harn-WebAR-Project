@@ -14,7 +14,8 @@ var app = angular.module('harnApp', ['ngAnimate', 'ngRoute' , 'ui.router'])
             })
             .state('ar', {
                 url: '/ar',
-                templateUrl: 'views/ar.scene.view.html'
+                templateUrl: 'views/ar.scene.view.html',
+                controller: 'ArController'
             })
             .state('vr', {
                 url: '/vr',
