@@ -22,10 +22,9 @@
             src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FTonyRobbin1.png?1549127756112"
             crossorigin="anonymous">
     </a-asset>
-    <!--         cursor="rayOrigin: mouse; fuse: false" -->
-    <!-- Testing Option 1/ option-1.1.patt -->
+    <!-- Marker 1 -->
     <!-- <a-marker markerhandler emitevents="true" id="marker" preset="hiro"> -->
-    <a-marker type="pattern" url="{{path}}" markerhandler emitevents="true" id="marker" >
+    <a-marker type="pattern" url="../Harn-Markers/option-1/option-1.1.patt" markerhandler emitevents="true" id="marker" >
         <a-entity id="parent" position="0 0 0">
             <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
                 emitevents="true">
@@ -63,7 +62,84 @@
             </a-image>
         </a-entity>
     </a-marker>
-
+    <!-- Marker 2: -->
+    <a-marker type="pattern" url="../Harn-Markers/option-1/option-1.2.patt" markerhandler emitevents="true" id="marker" >
+        <a-entity id="parent" position="0 0 0">
+            <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="1.3 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="1.3 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <a-entity text="value: Massimo Vitali;" position="0 1 0"></a-entity>
+            </a-image>
+            <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-85 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="0 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="0 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <!-- <a-animation attribute="position" to="0 1 0"  begin="up"></a-animation> -->
+                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                <a-entity text="value: Yayoi Kusama;" position="0 1 0"></a-entity>
+            </a-image>
+            <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="-1.3 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="-1.3 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <!-- <a-animation attribute="position" to="-1.3 1 0"  begin="up"></a-animation> -->
+                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                <a-entity text="value: Tony Robbin;" position="0 1 0"></a-entity>
+            </a-image>
+        </a-entity>
+    </a-marker>
+    <!-- Marker 3:  -->
+    <a-marker type="pattern" url="../Harn-Markers/option-1/option-1.3.patt" markerhandler emitevents="true" id="marker" >
+        <a-entity id="parent" position="0 0 0">
+            <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="1.3 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="1.3 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <a-entity text="value: Massimo Vitali;" position="0 1 0"></a-entity>
+            </a-image>
+            <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-85 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="0 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="0 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <!-- <a-animation attribute="position" to="0 1 0"  begin="up"></a-animation> -->
+                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                <a-entity text="value: Yayoi Kusama;" position="0 1 0"></a-entity>
+            </a-image>
+            <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="-1.3 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="-1.3 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <!-- <a-animation attribute="position" to="-1.3 1 0"  begin="up"></a-animation> -->
+                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                <a-entity text="value: Tony Robbin;" position="0 1 0"></a-entity>
+            </a-image>
+        </a-entity>
+    </a-marker>
     <!-- AR/360 Image Portal Door-->
     <!-- <a-anchor hit-testing-enabled="true">
         <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 0"
