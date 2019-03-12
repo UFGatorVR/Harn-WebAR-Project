@@ -162,7 +162,7 @@ THREEx.Portal360.prototype._buildOutsideMesh = function(texture360, doorWidth, d
 	//		add squareCache
 	//////////////////////////////////////////////////////////////////////////////
 	var squareCache = THREEx.Portal360.buildSquareCache()
-	squareCache.scale.y = doorWidth
+	squareCache.scale.x = doorWidth
 	squareCache.scale.y = doorHeight
 	doorOutsideCenter.add( squareCache )
 
