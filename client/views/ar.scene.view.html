@@ -12,15 +12,6 @@
 
 <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
     <a-asset>
-        <img id="vitali-src" type="image/png"
-            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FMassimoVitali1.png?1549127754541"
-            crossorigin="anonymous">
-        <img id="kusama-src" type="image/png"
-            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FYayoiKusama.png?1549127753700"
-            crossorigin="anonymous">
-        <img id="robbin-src" type="image/png"
-            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FTonyRobbin1.png?1549127756112"
-            crossorigin="anonymous">
         <a-asset-item id="moon-obj" src="client/assets/3D/Moon.obj"></a-asset-item>
         <a-asset-item id="moon-mtl" src="client/assets/3D/Moon.mtl"></a-asset-item>
     </a-asset>
@@ -28,7 +19,6 @@
     <!-- <a-marker markerhandler emitevents="true" id="marker" preset="hiro"> -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="marker">
         <a-entity obj-model="obj: #moon-obj;" scale="0.001 0.001 0.001"></a-entity>
-
     </a-marker>
 
     <!-- Marker 2: Veil by Jeff Joyce-->
@@ -76,11 +66,6 @@
             </a-image>
         </a-entity>
     </a-marker>
-    <!-- AR/360 Image Portal Door-->
-    <!-- <a-anchor hit-testing-enabled="true">
-        <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 0"
-            scale="0.7 1 0.7" rotation="0 0 0"></a-portal-door>
-    </a-anchor> -->
 
     <!-- Define a static camera -->
     <a-camera-static />
