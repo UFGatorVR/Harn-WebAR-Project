@@ -8,9 +8,11 @@ AFRAME.registerComponent('arjs-portal-door', {
 		},
 		doorWidth : {	// width of the door
 			type: 'number',
+			default: 1,
 		},
 		doorHeight : {	// height of the door
 			type: 'number',
+			default: 2,
 		},
 	},
 	init: function () {
@@ -37,7 +39,5 @@ AFRAME.registerPrimitive('a-portal-door', AFRAME.utils.extendDeep({}, AFRAME.pri
 	},
 	mappings: {
 		'url': 'arjs-portal-door.url',
-		'doorWidth': 'arjs-portal-door.doorWidth',
-		'doorHeight': 'arjs-portal-door.doorHeight'
 	}
 }))
