@@ -19,40 +19,75 @@
 
 <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
     <a-asset>
-        <a-asset-item id="moon-obj" src="client/assets/3D/Moon.obj"></a-asset-item>
-        <a-asset-item id="moon-mtl" src="client/assets/3D/Moon.mtl"></a-asset-item>
+        <img id="vitali-src" type="image/png"
+            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FMassimoVitali1.png?1549127754541"
+            crossorigin="anonymous">
+        <img id="kusama-src" type="image/png"
+            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FYayoiKusama.png?1549127753700"
+            crossorigin="anonymous">
+        <img id="robbin-src" type="image/png"
+            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FTonyRobbin1.png?1549127756112"
+            crossorigin="anonymous">
     </a-asset>
     <!-- Marker 1: Full Moon by Michael Light -->
-    <!-- <a-marker markerhandler emitevents="true" id="marker" preset="hiro"> -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="marker">
-        <a-entity obj-model="obj: #moon-obj;" scale="0.001 0.001 0.001"></a-entity>
+        <a-entity id="moon" obj-model="obj: url(./../assets/3D/moon/Moon.obj); mtl: url(./../assets/3D/moon/Moon.mtl)"
+            position="0 0 0" scale=".02 .02 .02" rotation="-90 0 0"></a-entity>
+        <a-entity particle-system="preset: default; positionSpread: 10 10 10; velocityValue: 0 0 0; velocitySpread: 0 0 0; accelerationValue: 0 0 0; accelerationSpread:0 0 0; texture: ../assets/star.png;color: #ffffff; size: 5; particleCount: 200"></a-entity>
+        </a-entity>
     </a-marker>
 
     <!-- Marker 2: Veil by Jeff Joyce-->
-    <a-anchor type="pattern" url="../Harn-Markers/joyce-marker.patt" markerhandler emitevents="true" id="marker"
+    <a-anchor type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true" id="marker"
         hit-testing-enabled="true">
-        <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 1"
-            scale="1 1 1" rotation="-90 0 0"></a-portal-door>
+        <a-portal-door doorWidth="2" url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"
+            position="0 0 1" scale="1 1 1" rotation="-90 0 0"></a-portal-door>
     </a-anchor>
 
     <!-- Marker 3: Nest-Infinity by Kusama -->
-    <a-marker type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true" id="marker">
-        <!-- Particle System -->
-        <a-entity position="0 2.5 0">
-            <a-entity
-                particle-system="preset: rain; positionSpread: 10 10 10;texture: ../assets/star.png;color: #ff0000; size: 5; particleCount: 200">
-            </a-entity>
-        </a-entity>
-
-
-        <!-- Rotating box with initial offset -->
-        <a-entity rotation="45 45 45" position="0 1 0">
-            <a-box position="0 1 0" rotation="0 0 0">
-                <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
+    <a-marker type="pattern" url="../Harn-Markers/joyce-marker.patt" markerhandler emitevents="true" id="marker">
+        <a-entity id="parent" position="0 0 0">
+            <a-image id="vitali-img" src="#vitali-src" position="1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="1.3 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
                 </a-animation>
-            </a-box>
+                <a-animation attribute="position" to="1.3 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <a-entity text="value: Massimo Vitali;" position="0 1 0"></a-entity>
+            </a-image>
+            <a-image id="kusama-img" src="#kusama-src" position="0 0 0" rotation="-85 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="0 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="0 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <!-- <a-animation attribute="position" to="0 1 0"  begin="up"></a-animation> -->
+                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                <a-entity text="value: Yayoi Kusama;" position="0 1 0"></a-entity>
+            </a-image>
+            <a-image id="robbin-img" src="#robbin-src" position="-1.3 0 0" rotation="-90 0 0" scale="1 1 1"
+                emitevents="true">
+                <a-animation attribute="position" to="-1.3 1 0" begin="up">
+                    <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"></a-animation> -->
+                </a-animation>
+                <a-animation attribute="position" to="-1.3 0 0" begin="down">
+                    <!-- <a-animation attribute="scale" to="1 1 1"></a-animation> -->
+                </a-animation>
+                <!-- <a-animation attribute="position" to="-1.3 1 0"  begin="up"></a-animation> -->
+                <!-- <a-animation attribute="scale" to="1.3 1.3 1.3"  begin="down" ></a-animation> -->
+                <a-entity text="value: Tony Robbin;" position="0 1 0"></a-entity>
+            </a-image>
         </a-entity>
     </a-marker>
+    <!-- AR/360 Image Portal Door-->
+    <!-- <a-anchor hit-testing-enabled="true">
+        <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 0"
+            scale="0.7 1 0.7" rotation="0 0 0"></a-portal-door>
+    </a-anchor> -->
 
     <!-- Define a static camera -->
     <a-camera-static />
