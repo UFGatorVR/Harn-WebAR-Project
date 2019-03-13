@@ -42,12 +42,12 @@ THREEx.Portal360 = function(videoImageURL, doorWidth, doorHeight){
 	this.insideMesh = insideMesh
 
 	// create outsideMesh which is visible IIF outside the portal
-	var outsideMesh = this._buildOutsideMesh(texture360, doorWidth, doorHeight)
+	var outsideMesh = this._buildOutsideMesh(texture360, 5, 5)
 	doorCenter.add(outsideMesh)
 	this.outsideMesh = outsideMesh
 
 	// create frameMesh for the frame of the portal
-	var frameMesh = this._buildRectangularFrame(doorWidth/100, doorWidth, doorHeight)
+	var frameMesh = this._buildRectangularFrame(doorWidth/100, 5, 5)
 	doorCenter.add(frameMesh)
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -162,7 +162,7 @@ THREEx.Portal360.prototype._buildOutsideMesh = function(texture360, doorWidth, d
 	//		add squareCache
 	//////////////////////////////////////////////////////////////////////////////
 	var squareCache = THREEx.Portal360.buildSquareCache()
-	squareCache.scale.y = doorWidth
+	squareCache.scale.x = doorWidth
 	squareCache.scale.y = doorHeight
 	doorOutsideCenter.add( squareCache )
 
