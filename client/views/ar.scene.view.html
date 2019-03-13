@@ -18,17 +18,31 @@
 </div>
 
 <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
-    <a-asset>
-        <img id="vitali-src" type="image/png"
-            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FMassimoVitali1.png?1549127754541"
+    <a-assets>
+        <img id="sun-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2F1024px-Map_of_the_full_sun.jpg?1540859304920"
             crossorigin="anonymous">
-        <img id="kusama-src" type="image/png"
-            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FYayoiKusama.png?1549127753700"
+        <img id="mercury-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fmercurymap.jpg?1541102122291"
             crossorigin="anonymous">
-        <img id="robbin-src" type="image/png"
-            src="https://cdn.glitch.com/41ca145c-50f4-40b7-85c7-af391afd3b24%2FTonyRobbin1.png?1549127756112"
+        <img id="venus-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fvenusmap.jpg?1541102155907"
             crossorigin="anonymous">
-    </a-asset>
+        <img id="earth-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fearthmap1k.jpg?1541102064615"
+            crossorigin="anonymous">
+        <img id="mars-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fmars_1k_color.jpg?1541102234577"
+            crossorigin="anonymous">
+        <img id="jupiter-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fjupitermap.jpg?1541101634813"
+            crossorigin="anonymous">
+        <img id="saturn-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fsaturnmap.jpg?1541102148468"
+            crossorigin="anonymous">
+        <img id="uranus-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Furanusmap.jpg?1541102150185"
+            crossorigin="anonymous">
+        <img id="neptune-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fneptunemap.jpg?1541102137305"
+            crossorigin="anonymous">
+        <img id="pluto-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fplutomap1k.jpg?1541102145905"
+            crossorigin="anonymous">
+        <img id="moon-texture" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2FMoonmap_from_clementine_data.png?1541102132708"
+            crossorigin="anonymous">
+        <a-asset-item id="asteroids" response-type="arraybuffer" src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2Fasteroides.glb?1541106805090"></a-asset-item>
+    </a-assets>
     <!-- Marker 1: Full Moon by Michael Light -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="marker">
         <a-entity id="moon" obj-model="obj: url(./../assets/3D/moon/Moon.obj); mtl: url(./../assets/3D/moon/Moon.mtl)"
