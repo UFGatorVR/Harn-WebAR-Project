@@ -95,8 +95,9 @@
 
 
             <!-- let's make the sun rotate and give off light!-->
-            <a-sphere id="sun" position="0 0 0" radius="4" src="#sun-texture" mixin="rotation" light="type: point"
-                material="shader: flat;"></a-sphere>
+            <a-sphere id="sun" position="0 0 0" radius="4" src="#sun-texture" mixin="rotation" material="shader: flat;"
+                light="type: point">
+            </a-sphere>
 
             <a-entity id="asteroid-belt" gltf-model="#asteroids" scale="2.1 2.1 2.1" position="0 0 0" mixin="rotation"
                 animation="dur: 60000;"></a-entity>
@@ -185,13 +186,13 @@
 
     <!-- Marker 3: Nest-Infinity by Kusama -->
     <a-marker type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true" id="marker">
+        <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity>
         <!-- Particle System -->
-        <a-entity position="0 2.5 0">
+        <a-entity position="0 1 0">
             <a-entity
-                particle-system="preset: rain; positionSpread: 10 10 10;texture: ../assets/star.png;color: #ff0000; size: 5; particleCount: 200">
+                spe-particles="texture: https://cdn.glitch.com/9e8b9751-91e2-43c8-ae38-f605078000a9%2Fstar.png?1552516620395;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 5; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1000; size: 1,.2; direction: backward">
             </a-entity>
         </a-entity>
-
 
         <!-- Rotating box with initial offset -->
         <a-entity rotation="45 45 45" position="0 1 0">
