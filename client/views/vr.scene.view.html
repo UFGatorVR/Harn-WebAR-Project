@@ -1,0 +1,25 @@
+<!-- Inside body -->
+<a-scene vr-mode-ui="enabled: false">
+    <a-assets>
+        <img id="water" src="https://cdn.glitch.com/02b6709d-8d94-4e74-9fcb-3c99ef945f9e%2Fwater.jpg?1518648383758">
+        <img id="sky" src="https://cdn.glitch.com/02b6709d-8d94-4e74-9fcb-3c99ef945f9e%2Fskybox.jpg?1518648383807">
+        <a-asset-item id="heart-model"
+            src="https://cdn.glitch.com/02b6709d-8d94-4e74-9fcb-3c99ef945f9e%2Fheart.obj?1518648383547"> </a-asset-item>
+    </a-assets>
+    <a-plane src="#water" position="0 0 0" scale="50 50 50" rotation="-90 0 0" width="4" height="4" color="#ECECEC"
+        shadow repeat="16 16">
+    </a-plane>
+    <a-sky src="#sky" color="#ECECEC"></a-sky>
+    <a-entity obj-model="obj: #heart-model" position="0 2 2" material="color: red">
+        <a-animation attribute="rotation" to="0 360 0" repeat="indefinitely" easing="ease-sine" dur="2000">
+        </a-animation>
+        <a-animation attribute="position" to="0 1.8 2" direction="alternate" repeat="indefinitely" easing="linear"
+            dur="2000"></a-animation>
+    </a-entity>
+    <a-entity obj-model="obj: #heart-model" position="-2 2 0" material="color: pink">
+        <a-animation attribute="rotation" to="0 360 0" repeat="indefinitely" easing="ease-sine" dur="2000">
+        </a-animation>
+        <a-animation attribute="position" to="-2 1.8 0" direction="alternate" repeat="indefinitely" easing="linear"
+            dur="2000"></a-animation>
+    </a-entity>
+</a-scene>
