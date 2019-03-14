@@ -186,20 +186,21 @@
 
     <!-- Marker 3: Nest-Infinity by Kusama -->
     <a-marker type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true" id="marker">
-        <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity>
-        <!-- Particle System -->
-        <a-entity position="0 1 0">
-            <a-entity
-                spe-particles="texture: https://cdn.glitch.com/9e8b9751-91e2-43c8-ae38-f605078000a9%2Fstar.png?1552516620395;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 5; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1000; size: 1,.2; direction: backward">
-            </a-entity>
-        </a-entity>
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0 1 2"></a-entity>
 
         <!-- Rotating box with initial offset -->
-        <a-entity rotation="45 45 45" position="0 1 0">
+        <a-entity rotation="45 45 45" position="0 1 -1">
             <a-box position="0 1 0" rotation="0 0 0">
                 <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
                 </a-animation>
             </a-box>
+            <!-- Particle System -->
+            <a-entity position="0.016 0.987 0.04">
+                <a-entity
+                    spe-particles="texture: ../assets/star.png;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 5; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1; size: 1,.2; direction: backward">
+                </a-entity>
+            </a-entity>
         </a-entity>
     </a-marker>
 
