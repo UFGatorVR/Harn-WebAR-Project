@@ -67,6 +67,10 @@
     </a-assets>
     <!-- Marker 1: Full Moon by Michael Light -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="marker">
+        <!-- A clipping plane -->
+        <a-plane clipping-plane></a-plane>
+
+        <!-- Our Solar System, wrapped for scaling and rotating -->
         <a-entity scale="0.3 0.3 0.3" rotation="90 0 0">
             <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity>
 
