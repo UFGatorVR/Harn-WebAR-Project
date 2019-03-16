@@ -1,6 +1,24 @@
 angular.module('harnApp').controller('ArController', function ($scope) {
+    const center_button = document.querySelector("#center");
+    const light_marker = document.querySelector('#light-marker');
+    const kusama_marker = document.querySelector('#kusama-marker');
+    const joyce_marker = document.querySelector('#joyce-marker');
 
     console.log("DEBUG 1")
+
+    center_button.addEventListener('click',function (){ 
+    
+        if (light_marker.object3D.visible == true) {
+            console.log('light')
+        } 
+        else if (kusama_marker.object3D.visible == true) {
+            console.log('kusama')
+
+        }
+        else if(joyce_marker.object3D.visible == true) {
+            console.log('joyce')
+        }
+    });
 
     $scope.hideAR = function() {
         var c = document.body.childNodes;

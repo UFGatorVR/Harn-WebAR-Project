@@ -68,7 +68,7 @@
     <!-- Marker 1: Full Moon by Michael Light -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="light-marker">
         <!-- A clipping plane -->
-        <!-- <a-plane position="0 0 0"clipping-plane></a-plane> -->
+        <!-- <a-plane position="0 0 0" clipping-plane></a-plane> -->
 
         <!-- Our Solar System, wrapped for scaling and rotating -->
         <a-entity scale="0.3 0.3 0.3" rotation="90 0 0">
@@ -113,7 +113,8 @@
             </a-entity>
 
             <a-entity id="orbit-venus" mixin="orbit">
-                <a-sphere id="venus" position="0 0 8.5" radius=".4" src="#venus-texture" mixin="rotation"></a-sphere>
+                <a-sphere id="venus" position="0 0 8.5" radius=".4" src="#venus-texture" mixin="rotation">
+                </a-sphere>
             </a-entity>
 
             <a-entity id="orbit-mars" mixin="orbit">
@@ -182,21 +183,25 @@
         </a-entity>
     </a-marker>
     <!-- Marker 2: Veil by Jeff Joyce-->
-    <a-anchor type="pattern" url="../Harn-Markers/joyce-marker.patt" markerhandler emitevents="true" id="marker"
+    <a-anchor type="pattern" url="../Harn-Markers/joyce-marker.patt" markerhandler emitevents="true" id="joyce-marker"
         hit-testing-enabled="true">
         <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 1"
             scale="1 1 1" rotation="-90 0 0"></a-portal-door>
     </a-anchor>
 
     <!-- Marker 3: Nest-Infinity by Kusama -->
-    <a-marker type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true" id="marker">
+    <a-marker type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true"
+        id="kusama-marker">
         <a-entity light="type: ambient; color: #BBB"></a-entity>
-        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0 1 2"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0 1 3"></a-entity>
 
         <!-- Rotating box with initial offset -->
         <a-entity rotation="45 45 45" position="0 1 0" scale=".5 .5 .5">
-            <a-box position="0 0 0" rotation="0 0 0" src="../assets/video/KusamaBoxStatic.mp4">
+            <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
+            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white">
                 <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
+                </a-animation>
+                <a-animation attribute="material.src" dur="10000" to="../assets/video/KusamaBoxStatic.mp4">
                 </a-animation>
             </a-box>
             <!-- Particle System -->
@@ -209,6 +214,6 @@
     </a-marker>
 
     <!-- Define a static camera -->
-    <a-camera-static />
-    <!-- <a-entity camera></a-entity> -->
+    <!-- <a-camera-static id='camera' clipping-plane/> -->
+    <a-entity id='camera' camera clipping-plane></a-entity>
 </a-scene>
