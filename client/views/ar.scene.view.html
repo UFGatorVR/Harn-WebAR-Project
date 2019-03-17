@@ -67,14 +67,20 @@
     </a-assets>
     <!-- Marker 1: Full Moon by Michael Light -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="light-marker">
-        <!-- A clipping plane -->
-        <!-- <a-plane position="0 0 0" clipping-plane></a-plane> -->
+        <!-- Into Text -->
+        <a-entity
+            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25">
+            <a-entity position="-1.82 0 0" rotation="-90 0 0">
+                <a-entity scale="1.2 1.2 1.2" position="0.237 0.646 0" text-geometry="value:Full Moon"
+                    material="color:white"></a-entity>
+                <a-entity text-geometry="value: Micheal Light;" material="color:white"></a-entity>
+            </a-entity>
+        </a-entity>
 
         <!-- Our Solar System, wrapped for scaling and rotating -->
-        <a-entity scale="0.3 0.3 0.3" rotation="90 0 0">
-            <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity>
+        <a-entity id="light-marker" scale="0.3 0.3 0.3" rotation="90 0 0" visible="false">
+            <!-- <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity> -->
 
-            <a-sky color="black"></a-sky>
             <a-entity star-system="count: 1000; radius: 250; depth: 0"></a-entity>
 
             <!-- large rings we can use to guide our orbits -->
@@ -99,8 +105,7 @@
 
 
             <!-- let's make the sun rotate and give off light!-->
-            <a-sphere id="sun" position="0 0 0" radius="4" src="#sun-texture" mixin="rotation" material="shader: flat;"
-                light="type: point">
+            <a-sphere id="sun" position="0 0 0" radius="4" src="#sun-texture" mixin="rotation" material="shader: flat;">
             </a-sphere>
 
             <a-entity id="asteroid-belt" gltf-model="#asteroids" scale="2.1 2.1 2.1" position="0 0 0" mixin="rotation"
@@ -185,18 +190,35 @@
     <!-- Marker 2: Veil by Jeff Joyce-->
     <a-anchor type="pattern" url="../Harn-Markers/joyce-marker.patt" markerhandler emitevents="true" id="joyce-marker"
         hit-testing-enabled="true">
-        <a-portal-door url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 1"
+        <!-- Into Text -->
+        <a-entity
+            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25">
+            <a-entity position="-1.667 0 0" rotation="-90 0 0">
+                <a-entity scale="1.2 1.2 1.2" position="1.005 0.646 0.015" text-geometry="value:Veil"
+                    material="color:white"></a-entity>
+                <a-entity text-geometry="value: Jeff Joyce;" material="color:white"></a-entity>
+            </a-entity>
+        </a-entity>
+        <a-portal-door id="joyce-marker" visible="false" url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 1"
             scale="1 1 1" rotation="-90 0 0"></a-portal-door>
     </a-anchor>
 
-    <!-- Marker 3: Nest-Infinity by Kusama -->
+    <!-- Marker 3: Nets-Infinity by Kusama -->
     <a-marker type="pattern" url="../Harn-Markers/kusama-marker.patt" markerhandler emitevents="true"
         id="kusama-marker">
-        <a-entity light="type: ambient; color: #BBB"></a-entity>
-        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0 1 3"></a-entity>
+
+        <!-- Into Text -->
+        <a-entity
+            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25">
+            <a-entity position="-1.82 0 0" rotation="-90 0 0">
+                <a-entity scale="1.2 1.2 1.2" position="-0.008 0.646 0.015" text-geometry="value:Nets-Inifinity"
+                    material="color:white"></a-entity>
+                <a-entity text-geometry="value: Yayoi Kusama;" material="color:white"></a-entity>
+            </a-entity>
+        </a-entity>
 
         <!-- Rotating box with initial offset -->
-        <a-entity rotation="45 45 45" position="0 1 0" scale=".5 .5 .5">
+        <a-entity id="kusama-marker" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
             <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white">
                 <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
@@ -215,5 +237,5 @@
 
     <!-- Define a static camera -->
     <!-- <a-camera-static id='camera' clipping-plane/> -->
-    <a-entity id='camera' camera clipping-plane></a-entity>
+    <a-entity id='camera' camera></a-entity>
 </a-scene>

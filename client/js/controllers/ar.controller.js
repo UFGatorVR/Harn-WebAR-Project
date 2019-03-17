@@ -4,7 +4,10 @@ angular.module('harnApp').controller('ArController', function ($scope) {
     const kusama_marker = document.querySelector('#kusama-marker');
     const joyce_marker = document.querySelector('#joyce-marker');
 
-    console.log("DEBUG 1")
+    const light_content = document.querySelector('#light-marker');
+    const kusama_content = document.querySelector('#kusama-content');
+    const joyce_content = document.querySelector('#joyce-content');
+
 
     center_button.addEventListener('click',function (){ 
     
