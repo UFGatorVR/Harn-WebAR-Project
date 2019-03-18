@@ -4,17 +4,10 @@
 <div class="frame" style="z-index:999; position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
     <img id="reference-src" type="image/png" src="../assets/reference.png" crossorigin="anonymous">
 </div>
-<div class="navbar">
-    <button id="left">
-        <i class="fas fa-user"></i>
-    </button>
-    <button id="center">
-        <i class="fas fa-play"></i>
-    </button>
-    <button id="right" ng-click="hideAR()" ui-sref="vr">
-        <i class="fas fa-archway"></i>
-    </button>
-</div>
+
+<button id="center" style="position: fixed; bottom: 20px; left: 50%; width: 60px; height: 60px; border-radius: 30px; margin-left: -30px; background-color: white; border: 1px solid #000;">
+    <i class="fas fa-play" style="color: black;"></i>
+</button>
 
 <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
 
