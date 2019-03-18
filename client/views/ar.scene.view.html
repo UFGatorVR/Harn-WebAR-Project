@@ -68,17 +68,22 @@
     <!-- Marker 1: Full Moon by Michael Light -->
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="light-marker">
         <!-- Into Text -->
-        <a-entity id="light-text"
-            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25">
-            <a-entity position="-1.82 0 0" rotation="-90 0 0">
-                <a-entity scale="1.2 1.2 1.2" position="0.237 0.646 0" text-geometry="value:Full Moon"
-                    material="color:white"></a-entity>
-                <a-entity text-geometry="value: Micheal Light;" material="color:white"></a-entity>
+        <a-entity
+            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25; pauseEvents: light-fadeout">
+            <a-entity id="light-text" position="-1.82 0 0" rotation="-90 0 0" scale="1 1 1"
+                animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: light-fadeout"
+                animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: light-fadeout">
+                <a-entity id="light-top-text" scale="1.2 1.2 1.2" position="0.237 0.646 0"
+                    text-geometry="value:Full Moon" material="color:white;"></a-entity>
+                <a-entity id="light-bottom-text" text-geometry="value: Micheal Light;" material="color:white;"
+                    animation="property: material.opacity; dur: 100;
+                                          easing: linear; from 1; to: 0; startEvents: light-fadeout"></a-entity>
             </a-entity>
         </a-entity>
 
         <!-- Our Solar System, wrapped for scaling and rotating -->
-        <a-entity id="light-marker" scale="0.3 0.3 0.3" rotation="90 0 0" visible="false" >
+        <a-entity id="light-content" scale="0.3 0.3 0.3" rotation="90 0 0" visible="false"
+            animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: light-fadein">
             <!-- <a-entity id="basic-light" light="type: ambient; color: #BBB"></a-entity> -->
 
             <a-entity star-system="count: 1000; radius: 250; depth: 0"></a-entity>
@@ -191,16 +196,20 @@
     <a-anchor type="pattern" url="../Harn-Markers/joyce-marker.patt" markerhandler emitevents="true" id="joyce-marker"
         hit-testing-enabled="true">
         <!-- Into Text -->
-        <a-entity id="joyce-text"
-            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25">
-            <a-entity position="-1.667 0 0" rotation="-90 0 0">
-                <a-entity scale="1.2 1.2 1.2" position="1.005 0.646 0.015" text-geometry="value:Veil"
-                    material="color:white"></a-entity>
-                <a-entity text-geometry="value: Jeff Joyce;" material="color:white"></a-entity>
-            </a-entity>
+        <a-entity
+            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25; pauseEvents: joyce-fadeout">
+            <a-entity position=" -1.667 0 0" rotation="-90 0 0" id="joyce-text"
+            animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: joyce-fadeout"
+            animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: joyce-fadeout">
+            <a-entity scale="1.2 1.2 1.2" position="1.005 0.646 0.015" text-geometry="value:Veil"
+                material="color:white"></a-entity>
+            <a-entity text-geometry="value: Jeff Joyce;" material="color:white"></a-entity>
         </a-entity>
-        <a-portal-door id="joyce-marker" visible="false" url="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" position="0 0 1"
-            scale="1 1 1" rotation="-90 0 0"></a-portal-door>
+        </a-entity>
+        <a-portal-door id="joyce-content" visible="false"
+            url="client/assets/4398758795_62432fcf13_o.jpg" position="0 0 1" scale="1 1 1"
+            rotation="-90 0 0"
+            animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: joyce-fadein"></a-portal-door>
     </a-anchor>
 
     <!-- Marker 3: Nets-Infinity by Kusama -->
@@ -208,9 +217,11 @@
         id="kusama-marker">
 
         <!-- Into Text -->
-        <a-entity id="kusama-text"
-            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25">
-            <a-entity position="-1.82 0 0" rotation="-90 0 0">
+        <a-entity
+            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25;pauseEvents: kusama-fadeout">
+            <a-entity position="-1.82 0 0" rotation="-90 0 0" id="kusama-text"
+                animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: kusama-fadeout"
+                animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadeout">
                 <a-entity scale="1.2 1.2 1.2" position="-0.008 0.646 0.015" text-geometry="value:Nets-Inifinity"
                     material="color:white"></a-entity>
                 <a-entity text-geometry="value: Yayoi Kusama;" material="color:white"></a-entity>
@@ -218,7 +229,8 @@
         </a-entity>
 
         <!-- Rotating box with initial offset -->
-        <a-entity id="kusama-marker" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false">
+        <a-entity id="kusama-content" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false"
+        animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
             <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white">
                 <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
