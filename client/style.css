@@ -1,42 +1,6 @@
 /* CSS files add styling rules to your content */
 
 body {
-<<<<<<< HEAD
-    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-    margin: 2em;
-  }
-  
-  h1 {
-    font-style: italic;
-    color: #373fff;
-  }
-      .container {
-        position:fixed; 
-        bottom:0px;
-        left: 0px;
-        width:100%; 
-        text-align: center; 
-        z-index: 1;  
-        background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-      
-      }
-      button {
-        background-color:transparent;
-          -moz-border-radius:6px;
-          -webkit-border-radius:6px;
-          border-radius:15px;
-        border:1px solid #fff;
-          display:inline-block;
-          cursor:pointer;
-          color: white;
-          font-family:'Karla', sans-serif;;
-          font-size:15px;
-          
-          padding:6px 24px;
-          text-decoration:none;
-        margin: 10px 5px;
-  }
-=======
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
 }
@@ -70,4 +34,3 @@ button {
   text-decoration:none;
   margin: 10px 5px;
 }
->>>>>>> a604a67c5fb031a138f5a9a155e5681723cffb7b
