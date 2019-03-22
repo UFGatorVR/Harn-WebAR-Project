@@ -80,6 +80,8 @@
                                           easing: linear; from 1; to: 0; startEvents: light-fadeout"></a-entity>
             </a-entity>
         </a-entity>
+        <a-entity clipping-plane></a-entity>
+        <!-- <a-plane scale="100 100 100" material="colorWrite: false;" rotation="-90 0 0"></a-plane> -->
 
         <!-- Our Solar System, wrapped for scaling and rotating -->
         <a-entity id="light-content" scale="0.3 0.3 0.3" rotation="90 0 0" visible="false"
@@ -232,14 +234,11 @@
         <a-entity id="kusama-content" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false"
         animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
-            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white">
-                <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
-                </a-animation>
-                <a-animation attribute="material.src" dur="10000" to="../assets/video/KusamaBoxStatic.mp4">
-                </a-animation>
+            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white" src="../assets/kusama-nets-infinity.jpeg"
+                animation__1="property: rotation; dur:10000; to:360 360 360; loop:true; easing:linear">
             </a-box>
             <!-- Particle System -->
-            <a-entity position="0.016 0.987 0.04">
+            <a-entity position="0 1 0">
                 <a-entity
                     spe-particles="texture: ../assets/star.png;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 5; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1; size: 1,.2; direction: backward">
                 </a-entity>
