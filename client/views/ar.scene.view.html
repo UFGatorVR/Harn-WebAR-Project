@@ -28,7 +28,8 @@
     <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
 
     <a-assets>
-        <img id="sun-texture"
+            <video muted autoplay loop = "true" id= "Kusama" autoplay src = "https://cdn.glitch.com/98bd5a65-bff5-4bef-a536-cde63715e2e4%2FKusamaBoxDynamic.mp4" webkit-playsinline controls crossorigin= ""></video>
+            <img id="sun-texture"
             src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2F1024px-Map_of_the_full_sun.jpg?1540859304920"
             crossorigin="anonymous">
         <img id="mercury-texture"
@@ -234,13 +235,14 @@
         <a-entity id="kusama-content" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false"
         animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
-            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white" src="../assets/kusama-nets-infinity.jpeg"
+            <a-box vidhandler position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white" material=" src: #Kusama;shader:flat;"
                 animation__1="property: rotation; dur:10000; to:360 360 360; loop:true; easing:linear">
             </a-box>
+
             <!-- Particle System -->
             <a-entity position="0 1 0">
                 <a-entity
-                    spe-particles="texture: ../assets/star.png;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 5; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1; size: 1,.2; direction: backward">
+                    spe-particles="texture: ../assets/star.png;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 3; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1; size: 1,.2; direction: backward">
                 </a-entity>
             </a-entity>
         </a-entity>
