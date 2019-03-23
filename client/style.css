@@ -34,3 +34,69 @@ button {
   text-decoration:none;
   margin: 10px 5px;
 }
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+/* 
+ * Base
+ */
+/*
+ * Accordion
+ */
+/* Basic Accordion Styles */
+.accordion {
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  outline: none;
+  margin: 0px;
+}
+.accordion input[name='panel'] {
+  display: none;
+}
+.accordion label {
+  position: relative;
+  display: block;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.accordion label:after {
+  content: '+';
+  position: absolute;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  line-height: 0.9em;
+}
+.accordion input:checked + label:after {
+  content: '-';
+  /* adjust line-height to vertically center icon */
+  line-height: 0.8em;
+}
+.accordion .accordion__content {
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  padding: 0 1.5em;
+}
+.accordion .accordion__content:not(:last-of-type) {
+  box-shadow: inset 0 -2px 2px rgba(0, 0, 0, .25), inset 4px 0 0 0 #1abc9c, inset 0 3px 6px rgba(0, 0, 0, .75);
+}
+.accordion .accordion__content .accordion__header {
+  padding: 1em 0;
+}
+.accordion .accordion__content .accordion__body {
+  font-size: 0.825em;
+  line-height: 1.4em;
+}
+
+input[name='panel']:checked ~ .accordion__content.accordion__content {
+  height: 100%;
+}
