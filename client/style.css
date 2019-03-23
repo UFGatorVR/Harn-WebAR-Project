@@ -47,11 +47,13 @@ button {
   border: none;
   outline: none;
   transition: 0.4s;
+  margin: 0px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
   background-color: #ccc;
+  margin: 0px;
 }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -61,4 +63,5 @@ button {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  margin: 0px;
 }
