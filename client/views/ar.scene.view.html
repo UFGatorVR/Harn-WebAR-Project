@@ -26,7 +26,7 @@
     <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
 
     <a-assets>
-        <video muted loop="true" id="kusama-video"
+        <video muted loop="true" id="kusama-video" autoplay
             src="../assets/video/KusamaBoxDynamic.mp4" webkit-playsinline
             controls crossorigin=""></video>
         <img id="sun-texture"
@@ -236,7 +236,7 @@
             animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
             <a-box vidhandler position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white"
-                material=" src: #Kusama;shader:flat;"
+                material=" src: #kusama-video;shader:flat;"
                 animation__1="property: rotation; dur:10000; to:360 360 360; loop:true; easing:linear">
             </a-box>
 

@@ -4,7 +4,7 @@ AFRAME.registerComponent('vidhandler', {
         this.video = document.querySelector("#kusama-video");
         this.playing = true;
         this.video.play();
-        document.querySelector("#Kusama").play()
+        document.querySelector("#kusama-video").play()
     }, 
 
 }); 
