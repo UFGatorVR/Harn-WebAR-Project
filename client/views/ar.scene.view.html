@@ -1,4 +1,4 @@
-<button ui-sref="home"
+<button ui-sref="home" ng-click="hideAR()"
     style=" 
  background-color: white; color:black; border: 1px solid black; position: fixed; z-index: 999; top: 10px; left: 10px;">BACK!</button>
 <div class="frame" style="z-index:999; position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
@@ -14,7 +14,7 @@
 <img src="/../assets/play.png"
     style="position: fixed; bottom: 100px; left:50%; width: 125px; height: 53.75px; margin-left:-62.5px;">
 
-<a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
+<a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false" loading-screen="dotsColor: red; backgroundColor: black">
 
     <!-- This is a "mixin" we can apply to planets to make them
             rotate-->
@@ -26,6 +26,9 @@
     <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
 
     <a-assets>
+        <video muted loop="true" id="kusama-video" 
+            src="../assets/video/KusamaBoxDynamic.mp4" webkit-playsinline
+            controls crossorigin=""></video>
         <img id="sun-texture"
             src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2F1024px-Map_of_the_full_sun.jpg?1540859304920"
             crossorigin="anonymous">
@@ -232,13 +235,15 @@
         <a-entity id="kusama-content" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false"
             animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
-            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white" src="../assets/kusama-nets-infinity.jpeg"
+            <a-box vidhandler position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white"
+                material=" src: #kusama-video;shader:flat;"
                 animation__1="property: rotation; dur:10000; to:360 360 360; loop:true; easing:linear">
             </a-box>
+
             <!-- Particle System -->
-            <a-entity position="0 1 0">
+            <a-entity position="0 0 0">
                 <a-entity
-                    spe-particles="texture: ../assets/star.png;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 5; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1; size: 1,.2; direction: backward">
+                    spe-particles="texture: ../assets/star.png;color: red; distribution: sphere; radius: 1; randomize-position: false; particle-count: 250; velocity: 3; velocity-spread: 3; drag: 1; max-age: 1; active-multiplier: 1; size: 1,.2; direction: backward">
                 </a-entity>
             </a-entity>
         </a-entity>
