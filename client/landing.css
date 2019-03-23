@@ -1,18 +1,41 @@
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
+.navbar {
+  max-height: 50px;
+}
+
+.navbar-brand {
+  padding: 0 15px;
+  padding-top: 20px;
+  height: 80px;
+  line-height: 80px;
+}
+
+
+.social-footer {
+    padding: 1rem;
+    background: #8a8a8a;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   
-  .fa:hover {
-    opacity: 0.7;
+  .social-footer .social-footer-icons li:last-of-type {
+    margin-right: 0;
   }
-
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
+  
+  .social-footer .social-footer-icons .fa {
+    font-size: 1.3rem;
+    color: #fefefe;
+  }
+  
+  .social-footer .social-footer-icons .fa:hover {
+    color: #4a4a4a;
+    transition: color 0.3s ease-in;
   }
   
