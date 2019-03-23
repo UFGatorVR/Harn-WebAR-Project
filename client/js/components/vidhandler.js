@@ -1,10 +1,10 @@
 AFRAME.registerComponent('vidhandler', { 
     // ... 
     init: function () { 
-        this.video = document.querySelector("#kusama-video");
-        this.playing = true;
-        this.video.play();
-        document.querySelector("#kusama-video").play()
+        var video = document.querySelector("#kusama-video");
+        window.addEventListener('kusama-fadein', function(){
+            video.play()
+        })
     }, 
 
 }); 
