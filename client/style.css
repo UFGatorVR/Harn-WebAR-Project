@@ -77,7 +77,7 @@ button {
 }
 .accordion input:checked + label:after {
   content: '-';
-  /* adjsut line-height to vertically center icon */
+  /* adjust line-height to vertically center icon */
   line-height: 0.8em;
 }
 .accordion .accordion__content {
