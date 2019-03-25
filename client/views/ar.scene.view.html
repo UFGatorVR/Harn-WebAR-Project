@@ -4,9 +4,9 @@
 <div class="frame" style="z-index:999; position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
     <img id="reference-src" type="image/png" src="../assets/reference.png" crossorigin="anonymous">
 </div>
-<div class="navbar">
+<div>
     <button id="center"
-        style="position: fixed; bottom: 20px; left: 50%; width: 60px; height: 60px; border-radius: 30px; margin-left: -30px; background-color: white; border: 1px solid #000;">
+        style="position: fixed; z-index:999; bottom: 20px; left: 50%; width: 60px; height: 60px; border-radius: 30px; margin-left: -30px; background-color: white; border: 1px solid #000;">
         <i class="fas fa-play" style="color: black;"></i>
     </button>
 </div>
@@ -14,7 +14,8 @@
 <img src="/../assets/play.png"
     style="position: fixed; bottom: 100px; left:50%; width: 125px; height: 53.75px; margin-left:-62.5px;">
 
-<a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false" loading-screen="dotsColor: red; backgroundColor: black">
+<a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false"
+    loading-screen="dotsColor: red; backgroundColor: black">
 
     <!-- This is a "mixin" we can apply to planets to make them
             rotate-->
@@ -26,8 +27,7 @@
     <a-mixin id="orbit" animation="property: rotation; loop: true; to: 0 360 0; dur: 40000; easing: linear;"></a-mixin>
 
     <a-assets>
-        <video muted loop="true" id="kusama-video" 
-            src="../assets/video/KusamaBoxDynamic.mp4" webkit-playsinline
+        <video muted loop="true" id="kusama-video" src="../assets/video/KusamaBoxDynamic.mp4" webkit-playsinline
             controls crossorigin=""></video>
         <img id="sun-texture"
             src="https://cdn.glitch.com/d558c128-2ed0-4284-a0da-4d18b9163ad6%2F1024px-Map_of_the_full_sun.jpg?1540859304920"
