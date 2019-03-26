@@ -13,15 +13,9 @@ a {
   color: white;
   text-decoration: underline;
 }
-.navbar {
-  max-height: 50px;
-}
 
-.navbar-brand {
-  padding: 0 15px;
-  padding-top: 20px;
-  height: 80px;
-  line-height: 80px;
+p, ol {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .social-footer {
