@@ -3,16 +3,16 @@
 <div class="frame" style="z-index:999; position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
     <img id="reference-src" type="image/png" src="../assets/reference.png" crossorigin="anonymous">
 </div>
-<div class="container">
-    <button id="left">
+<div class="navbar">
+    <!-- <button id="left">
         <i class="fas fa-user"></i>
-    </button>
+    </button> -->
     <button id="center">
         <i class="fas fa-play"></i>
     </button>
-    <button id="right" ng-click="hideAR()" ui-sref="vr">
+    <!-- <button id="right" ng-click="hideAR()" ui-sref="vr">
         <i class="fas fa-archway"></i>
-    </button>
+    </button> -->
 </div>
 
 <a-scene embedded arjs="debugUIEnabled: false; trackingMethod: best;" vr-mode-ui="enabled: false">
@@ -68,9 +68,10 @@
     <a-marker type="pattern" url="../Harn-Markers/light-marker.patt" markerhandler emitevents="true" id="light-marker">
         <!-- Into Text -->
         <a-entity
-            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25; pauseEvents: light-fadeout">
+            animation="property: scale; dir: alternate; dur: 3000; easing: linear; loop: true; from: 1 1 1; to: 1.2 1.2 1.2; pauseEvents: light-fadeout">
             <a-entity id="light-text" position="-1.82 0 0" rotation="-90 0 0" scale="1 1 1"
                 animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: light-fadeout"
+                animation__holdPosition="property: position; from: -1.82 0 0; to: 0 0 0; dur: 2000; autoplay: false; startEvents: light-fadeout"
                 animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: light-fadeout">
                 <a-entity id="light-top-text" scale="1.2 1.2 1.2" position="0.237 0.646 0"
                     text-geometry="value:Full Moon" material="color:white;"></a-entity>
@@ -196,9 +197,10 @@
         hit-testing-enabled="true">
         <!-- Into Text -->
         <a-entity
-            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25; pauseEvents: joyce-fadeout">
+            animation="property: scale; dir: alternate; dur: 3000; easing: linear; loop: true; from: 1 1 1; to: 1.2 1.2 1.2; pauseEvents: joyce-fadeout"> 
             <a-entity position=" -1.667 0 0" rotation="-90 0 0" id="joyce-text"
             animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: joyce-fadeout"
+            animation__holdPosition="property: position; from: -1.82 0 0; to: 0 0 0; dur: 2000; autoplay: false; startEvents: joyce-fadeout"
             animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: joyce-fadeout">
             <a-entity scale="1.2 1.2 1.2" position="1.005 0.646 0.015" text-geometry="value:Veil"
                 material="color:white"></a-entity>
@@ -217,9 +219,10 @@
 
         <!-- Into Text -->
         <a-entity
-            animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25;pauseEvents: kusama-fadeout">
+            animation="property: scale; dir: alternate; dur: 3000; easing: linear; loop: true; from: 1 1 1;to: 1.2 1.2 1.2;pauseEvents: kusama-fadeout">
             <a-entity position="-1.82 0 0" rotation="-90 0 0" id="kusama-text"
                 animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: kusama-fadeout"
+                animation__holdPosition="property: position; from: -1.82 0 0; to: 0 0 0; dur: 2000; autoplay: false; startEvents: kusama-fadeout"
                 animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadeout">
                 <a-entity scale="1.2 1.2 1.2" position="-0.008 0.646 0.015" text-geometry="value:Nets-Inifinity"
                     material="color:white"></a-entity>
