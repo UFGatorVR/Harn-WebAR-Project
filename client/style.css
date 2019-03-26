@@ -8,16 +8,45 @@ h1 {
   font-style: italic;
   color: #373fff;
 }
-.navbar {
-  position:absolute; 
-  right:0;
-  bottom:0; 
-  width:100%; 
-  text-align: center; 
-  z-index: 1;  
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-      
+
+a {
+  color: black;
+  text-decoration: underline;
 }
+
+p, ol {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.social-footer {
+    padding: 1rem;
+    background: #8a8a8a;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .social-footer .social-footer-icons li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .social-footer .social-footer-icons .fa {
+    font-size: 1.3rem;
+    color: #fefefe;
+  }
+  
+  .social-footer .social-footer-icons .fa:hover {
+    color: #4a4a4a;
+    transition: color 0.3s ease-in;
+  }
+  
 button {
   background-color:transparent;
   -moz-border-radius:6px;
@@ -33,4 +62,94 @@ button {
   padding:6px 24px;
   text-decoration:none;
   margin: 10px 5px;
+}
+
+/* Team Elements in footer */
+.team__label {
+  position: relative;
+  display: block;
+  text-align: left;
+  /* padding-bottom: 0.5em; */
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* .team__group {
+
+} */
+
+.team__li {
+  text-align: left;
+  position: relative;
+  display: block;
+  font-size: 1em;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+/* 
+ * Base
+ */
+/*
+ * Accordion
+ */
+/* Basic Accordion Styles */
+.accordion {
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  outline: none;
+  margin: 0px;
+}
+.accordion input[name='panel'] {
+  display: none;
+}
+.accordion label {
+  position: relative;
+  display: block;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.accordion label:after {
+  content: '+';
+  position: absolute;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+.accordion input:checked + label:after {
+  content: '-';
+  /* adjust line-height to vertically center icon */
+  line-height: 0.8em;
+}
+.accordion .accordion__content {
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  padding: 0 1.5em;
+}
+.accordion .accordion__content:not(:last-of-type) {
+  box-shadow: inset 0 -2px 2px rgba(0, 0, 0, .25), inset 4px 0 0 0 #1abc9c, inset 0 3px 6px rgba(0, 0, 0, .75);
+}
+.accordion .accordion__content .accordion__header {
+  padding: 0.25em 0;
+}
+.accordion .accordion__content .accordion__body {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+input[name='panel']:checked ~ .accordion__content.accordion__content {
+  height: 100%;
 }
