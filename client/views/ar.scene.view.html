@@ -2,7 +2,7 @@
     style=" 
  background-color: white; color:black; border: 1px solid black; position: fixed; z-index: 999; top: 10px; left: 10px;">BACK!</button>
 <div class="frame" style="z-index:999; position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
-    <img id="reference-src" type="image/png" src="../assets/reference.png" crossorigin="anonymous">
+    <img id="reference-src" type="image/png" src="../assets/reference.png" crossorigin="anonymous" height="110" width="110">
 </div>
 <div>
     <button id="center"
@@ -201,7 +201,7 @@
         <!-- Into Text -->
         <a-entity
             animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25; pauseEvents: joyce-fadeout">
-            <a-entity position=" -1.667 0 0" rotation="-90 0 0" id="joyce-text"
+            <a-entity position="-1.667 0 0" rotation="-90 0 0" id="joyce-text"
                 animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: joyce-fadeout"
                 animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: joyce-fadeout">
                 <a-entity scale="1.2 1.2 1.2" position="1.005 0.646 0.015" text-geometry="value:Veil"
@@ -222,7 +222,7 @@
         <!-- Into Text -->
         <a-entity
             animation="property: rotation; dir: alternate; dur: 3000; easing: linear; loop: true; from: 0 0 -25;to: 0 0 25;pauseEvents: kusama-fadeout">
-            <a-entity position="-1.82 0 0" rotation="-90 0 0" id="kusama-text"
+            <a-entity position="-1.82 0 0.5" rotation="-90 0 0" id="kusama-text"
                 animation__scaledown="property: scale; from: 1 1 1; to: 0 0 0; dur: 2000; autoplay: false; startEvents: kusama-fadeout"
                 animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadeout">
                 <a-entity scale="1.2 1.2 1.2" position="-0.008 0.646 0.015" text-geometry="value:Nets-Inifinity"
@@ -232,7 +232,7 @@
         </a-entity>
 
         <!-- Rotating box with initial offset -->
-        <a-entity id="kusama-content" rotation="45 45 45" position="0 1 0" scale=".5 .5 .5" visible="false"
+        <a-entity id="kusama-content" rotation="45 45 45" position="0 1 0" scale="1 1 1" visible="false"
             animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
             <a-box vidhandler position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white"
