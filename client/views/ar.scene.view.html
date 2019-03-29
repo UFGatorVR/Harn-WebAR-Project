@@ -241,10 +241,8 @@
         animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false; delay: 2000; startEvents: kusama-fadein"
         animation__scaleUp="property: scale; from: 0 0 0; to: 0.5 0.5 0.5; duration: 2000; autoplay: false; delay: 2000; startEvents: kusama-fadein">
             <!-- src="../assets/video/KusamaBoxStatic.mp4" -->
-            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white">
+            <a-box position="0 0 0" rotation="0 0 0" scale="1 1 1" color="white" vidhandler material="src:#kusama-video;shader:flat">
                 <a-animation attribute="rotation" dur="10000" to="360 360 360" repeat="indefinite" easing="linear">
-                </a-animation>
-                <a-animation attribute="material.src" dur="10000" to="../assets/video/KusamaBoxStatic.mp4">
                 </a-animation>
             </a-box>
             <!-- Particle System -->
