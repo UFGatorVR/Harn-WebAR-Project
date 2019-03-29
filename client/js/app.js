@@ -10,8 +10,7 @@ var app = angular.module('harnApp', ['ngAnimate', 'ngRoute' , 'ui.router'])
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: 'views/landing.view.html',
-                controller: 'LandingController'
+                templateUrl: 'views/landing.view.html'
             })
             .state('ar', {
                 url: '/ar',
