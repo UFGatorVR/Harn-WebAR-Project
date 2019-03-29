@@ -12,16 +12,18 @@
 
 
 <div style="display: grid; width: 100vw; background: url(../assets/body-bg.png);">
-
-  <h1 style="text-align: center; color: black; padding: 0px 20px; font-size: 34px; margin-top: 15px; color: rgb(71, 67, 64); font-family: Karla; font-style: normal; font-weight: 600;">Welcome to an Augmented Reality (AR) Art Experience</h1>
+  <h1
+    style="text-align: center; color: black; padding: 0px 20px; font-size: 34px; margin-top: 15px; color: rgb(71, 67, 64); font-family: Karla; font-style: normal; font-weight: 600;">
+    Welcome to an Augmented Reality (AR) Art Experience</h1>
 
   <p style="text-align: center; margin-bottom: 0px; margin-top: 5px; font-size: 20px;">Jump Right In!</p>
 
-  <button ui-sref="ar" style=" display: inline-block; margin-left: auto; margin-right: auto; color:white; background-color: rgb(17, 128, 191); font-family: Karla; font-weight: 600; font-size: 24px; border-radius: 0px;">ENTER</button>
+  <button ui-sref="ar"
+    style=" display: inline-block; margin-left: auto; margin-right: auto; color:white; background-color: rgb(17, 128, 191); font-family: Karla; font-weight: 600; font-size: 24px; border-radius: 0px;">ENTER</button>
 
   <p style="text-align: center; margin-bottom: 0px; margin-top: 5px; font-size: 20px;">Scroll For More Info</p>
   <p style="text-align: center; margin-bottom: 0px; margin-top: 35px; font-size: 60px; line-height: 10px;">&caron;</p>
-  
+
   <p style="padding: 5px 20px;">
     Augmented Reality (AR) refers to any computer generated images or animations superimposed onto the real world.
     Students from the University of Florida’s Gator Virtual Reality Club collaborated with the museum to produce 3
@@ -29,10 +31,19 @@
   </p>
 
   <p style="padding: 5px 20px;">
-    Adjacent to Yayoi Kusama’s Nets-Infinity (TWOS), Jeff Joyce’s Veil, and Michael Light’s Full Moon (Edward White
-    Spacewalking Above Texas: Photo by James McDi) are special wall markers. Each marker has its own 3D AR content.
-    <br><br>
-    To view the content: 
+    Visit special wall markers at these works of art for 3D AR content:
+  </p>
+  <ul>
+    <li style="font-family: 'Montserrat', sans-serif;">Yayoi Kusama’s <i>Nets-Infinity (TWOS)</i></li>
+
+    <li style="font-family: 'Montserrat', sans-serif;">Jeff Joyce’s <i>Veil</i></li>
+
+    <li style="font-family: 'Montserrat', sans-serif;">Michael Light’s <i>Full Moon (Edward White Spacewalking Above
+        Texas: Photo by James McDivitt, Gemini 4,
+        1965)</i></li>
+  </ul>
+  <p style="padding: 5px 20px;">
+    To view the content:
   </p>
   <ol style="margin-right: 20px;">
     <li>Tap the “Enter!” button on the bottom of your screen.</li>
@@ -44,7 +55,8 @@
 
     To view these instructions again, press the “Back” button in the upper left-hand corner. If you have any
     questions, please visit the Bishop Study Center.</p>
-  <button ui-sref="ar" style=" display: inline-block; margin-left: auto; margin-right: auto; color:white; background-color: rgb(17, 128, 191); font-family: Karla; font-weight: 600; font-size: 24px; border-radius: 0px;">ENTER</button>
+  <button ui-sref="ar"
+    style=" display: inline-block; margin-left: auto; margin-right: auto; color:white; background-color: rgb(17, 128, 191); font-family: Karla; font-weight: 600; font-size: 24px; border-radius: 0px;">ENTER</button>
 
   <div style="display: flex; flex-direction: column; justify-content: center;">
     <div class="accordion">
@@ -52,13 +64,14 @@
       <!-- Panel 1 -->
       <div>
         <input type="checkbox" name="panel" id="panel-1">
-        <label for="panel-1">Nets-Infinity</label>
+        <label for="panel-1"><i>Nets-Infinity</i></label>
         <div class="accordion__content accordion__content--med">
           <h5 class="accordion__header">Kusama's Box</h5>
           <p class="accordion__body">
-            For this piece, we tried to emulate the creation of <i>Nets-Infinity</i>. Just like Kusama, we start with a
-            blank canvas and start to meticulous add red in order to achieve the effect
-            of a red canvas with white dots.
+            For this piece, we thought about the process of painting <i>Nets-Infinity (TWOS)</i>. Similar to Kusama, we
+            start
+            with a blank canvas (in our case, a cube) and begin to add red in order to achieve the illusion of a red
+            canvas with white dots.
           </p>
         </div>
       </div>
@@ -66,13 +79,14 @@
       <!-- Panel 2 -->
       <div>
         <input type="checkbox" name="panel" id="panel-2">
-        <label for="panel-2">Full Moon</label>
+        <label for="panel-2"><i>Full Moon</i></label>
         <div class="accordion__content accordion__content--med">
           <h5 class="accordion__header">Animated Planetarium</h5>
           <p class="accordion__body">
-            We think the association between our content and Full Moon is pretty straightforward. The entire solar
-            system with approximate scale is represented in our 3D model.
-            If you want to play around with this model and the code it took to put it in your browser, <a
+
+            The prints by Michael Light inspired us to expand on the experience of outer space. The entire solar system
+            to approximate scale is represented in our 3D model. If you want to play around with this model and the code
+            it took to put it in your browser, <a
               href="https://hacks.mozilla.org/2019/02/webvr-starter-kit-mozilla-glitch/"
               style="text-decoration: underline; color:black;">click here</a>.
           </p>
@@ -82,19 +96,18 @@
       <!-- Panel 3 -->
       <div>
         <input type="checkbox" name="panel" id="panel-3">
-        <label for="panel-3">Veil</label>
+        <label for="panel-3"><i>Veil</i></label>
         <div class="accordion__content">
           <h5 class="accordion__header">Nature Portal</h5>
           <p class="accordion__body">
-            For this piece, we decided to take inspiration from the appreciation of nature theme that Joyce captures in
-            his work. The picture is of La'Chua Trail
-            and is a location you could go visit today if you wanted. Our goal is to promote exploration of
-            Gainesville's natural landscape.
+            For this piece, we highlight the “appreciation of nature” theme that Joyce captures in his work. By inviting
+            you to explore a scene at La Chua Trail, we promote exploration of Gainesville's natural landscape beyond
+            the museum walls.
           </p>
         </div>
       </div>
 
-    </div><!-- .accordion --> 
+    </div><!-- .accordion -->
   </div>
 </div>
 
