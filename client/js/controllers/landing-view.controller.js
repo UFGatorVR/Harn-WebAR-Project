@@ -1,6 +1,6 @@
-angular.module('harnApp').controller('LandingController', function ($http, $scope, $state,$transitions) {
-    // $transitions.onSuccess({}, function() {
-    //     $state.reload()
-    //     console.log("statechange success");
+angular.module('harnApp').controller('LandingController', function ($http, $scope, $route,$transitions) {
+    // $transitions.onSuccess({from:'ar', to: 'home'}, function(transition) {
+    //     console.log('debug')
+    //     location.reload()   
     //   });
 })

@@ -38,11 +38,11 @@ angular.module('harnApp').controller('ArController', function ($scope, $state, $
                 node.remove()
             }
         })
-        $state.go($state.current, {}, {});
-        $transitions.onSuccess({}, function() {
-            $state.reload()
-            console.log("statechange success");
-          });
+        // $state.go($state.current, {}, {});
+        // $transitions.onSuccess({}, function() {
+        //     $state.reload()
+        //     console.log("statechange success");
+        //   });
         // document.body.style = 'margin-left=0!important';
         // location.reload()
     }
