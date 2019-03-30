@@ -2,7 +2,7 @@
 // angular.module('listings', ['ngAnimate', 'ui.bootstrap', 'ui.router']);
 
 /* register the application and inject all the necessary dependencies */
-var app = angular.module('harnApp', ['ngAnimate', 'ngRoute' , 'ui.router'])
+var app = angular.module('harnApp', ['ngAnimate', 'ngRoute', 'ui.router'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/home');
 

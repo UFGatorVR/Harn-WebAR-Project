@@ -5,6 +5,18 @@ body {
   margin: 2em;
 }
 
+.section-header {
+  padding: 5px 20px; 
+  color: black; 
+  font-size: 28px; 
+  margin-top: 15px;
+  margin-bottom: 0px;
+  color: rgb(71, 67, 64); 
+  font-family: Karla; 
+  font-style: normal; 
+  font-weight: 600;
+}
+
 .team a {
   font-family: 'Montserrat', sans-serif;
 }
@@ -156,4 +168,17 @@ button {
 
 input[name='panel']:checked ~ .accordion__content.accordion__content {
   height: 100%;
+}
+
+.scroll-for-more {
+  bottom: 0px;
+  position: absolute;
+  left: 25%;
+  width: 50%;
+}
+
+.first-screen {
+  height: -moz-available;          /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
 }
