@@ -1,4 +1,4 @@
-angular.module('harnApp').controller('ArController', function ($scope) {
+angular.module('harnApp').controller('ArController', function ($scope, $state, $transitions) {
     const center_button = document.querySelector("#center");
     const light_marker = document.querySelector('#light-marker');
     const kusama_marker = document.querySelector('#kusama-marker');
@@ -34,11 +34,16 @@ angular.module('harnApp').controller('ArController', function ($scope) {
     $scope.hideAR = function() {
         var c = document.body.childNodes;
         c.forEach((node)=>{
-            console.log(node.nodeName)
             if (node.nodeName == "VIDEO") {
-                console.log('video')
                 node.remove()
             }
         })
+        $state.go($state.current, {}, {});
+        $transitions.onSuccess({}, function() {
+            $state.reload()
+            console.log("statechange success");
+          });
+        // document.body.style = 'margin-left=0!important';
+        // location.reload()
     }
 })
